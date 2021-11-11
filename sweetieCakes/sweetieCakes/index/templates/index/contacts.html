@@ -1,0 +1,56 @@
+{% extends 'index/base.html'%}
+
+
+{% block title%}
+Contacts
+{% endblock %}
+
+
+{% block menu%}
+    <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">HOME</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">ABOUT US</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'catalog' %}">CATALOG</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'contacts' %}">CONTACT US</a>
+        </li>
+        <button type="button" class="btn btn-dark">SIGN IN</button>
+    </ul>
+{% endblock %}
+
+
+{% block content%}
+<h2 class="text-center">Our Team Contacts</h2>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col">
+    <div class="card">
+      <img src="static/images/nurgissa.jpg" width="200" class="card-img-top" alt="nurgissa">
+      <div class="card-body">
+        <h5 class="card-title">{{ user.name.0}}</h5>
+        <small class="text-muted">{{position}}</small>
+        <p class="card-text">Phone number: {{phone.phone.0}},</p>
+        <p class="card-text">Email: {{email.email.0}},</p>
+        <p class="card-text">Office hours: {{hours}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="static/images/elina.jpg" width="200" class="card-img-top" alt="elina">
+      <div class="card-body">
+        <h5 class="card-title">{{ user.name.1}}</h5>
+        <small class="text-muted">{{position}}</small>
+        <p class="card-text">Phone number: {{phone.phone.1}},</p>
+        <p class="card-text">Email: {{email.email.1}},</p>
+        <p class="card-text">Office hours: {{hours}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

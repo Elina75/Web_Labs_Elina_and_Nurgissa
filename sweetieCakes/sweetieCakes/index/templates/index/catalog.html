@@ -1,0 +1,109 @@
+{% extends 'index/base.html'%}
+
+
+{% block title%}
+Catalog
+{% endblock %}
+
+
+{% block menu%}
+    <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">HOME</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">ABOUT US</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'catalog' %}">CATALOG</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'contacts' %}">CONTACT US</a>
+        </li>
+        <button type="button" class="btn btn-dark">SIGN IN</button>
+    </ul>
+{% endblock %}
+
+
+{% block content%}
+    <div class="container-md">
+    <div class="container-text">
+        <h7 class="text-left">CATEGORY> AESTHETIC CAKES</h7>
+        <h5 class="text-left">AESTHETIC CAKES</h5>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card h-60">
+                <img src="static/images/face.jpg" class="card-img-top" alt="face">
+                <div class="card-body">
+                    <h5 class="card-title">GUNTER CONRAD</h5>
+                    <p class="card-text">Please your loved ones with a masterpiece of cooking</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-60">
+                <img src="static/images/crown.jpg" class="card-img-top" alt="crown">
+                <div class="card-body">
+                    <h5 class="card-title">SPRING CAKE</h5>
+                    <p class="card-text">Please your loved ones with a masterpiece of cooking</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-60">
+                <img src="static/images/Golden.jpeg" class="card-img-top" alt="golden">
+                <div class="card-body">
+                    <h5 class="card-title">GOLDEN PIPES</h5>
+                    <p class="card-text">Please your loved ones with a masterpiece of cooking</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-60">
+                <img src="static/images/Spikes.jpeg" class="card-img-top" alt="spikes">
+                <div class="card-body">
+                    <h5 class="card-title">SPIKES</h5>
+                    <p class="card-text">Please your loved ones with a masterpiece of cooking</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-60">
+                <img src="static/images/aesthetic-cakes.jpeg" class="card-img-top" alt="aesthetic">
+                <div class="card-body">
+                    <h5 class="card-title">GOLDEN DEER</h5>
+                    <p class="card-text">Please your loved ones with a masterpiece of cooking</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-60">
+                <img src="static/images/Molecula.jpeg" class="card-img-top" alt="molecula">
+                <div class="card-body">
+                    <h5 class="card-title">THE MOLECULE</h5>
+                    <p class="card-text">Please your loved ones with a masterpiece of cooking</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

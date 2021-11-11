@@ -1,0 +1,96 @@
+{% extends 'index/base.html'%}
+
+
+{% block title%}
+Home page
+{% endblock %}
+
+
+{% block menu%}
+    <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">HOME</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">ABOUT US</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'catalog' %}">CATALOG</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'contacts' %}">CONTACT US</a>
+        </li>
+        <button type="button" class="btn btn-dark">SIGN IN</button>
+    </ul>
+{% endblock %}
+
+
+{% block content%}
+    <div class="container-md">
+        <img class="img-fluid" src="/static/images/main-photo.png" alt="..." >
+        <h3 class="text-center">CATEGORY</h3>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-60">
+                    <img src="static/images/birth-cakes.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Birthday cakes</h5>
+                        <p class="card-text">Please your loved ones with a masterpiece of cooking</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-60">
+                    <img src="static/images/wedding-cakes.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Wedding cakes</h5>
+                        <p class="card-text">Please your loved ones with a masterpiece of cooking</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-60">
+                    <img src="static/images/kids-cakes.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Kids cakes</h5>
+                        <p class="card-text">Please your loved ones with a masterpiece of cooking</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-60">
+                    <img src="static/images/corporative-cakes.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Corporative cakes</h5>
+                        <p class="card-text">Please your loved ones with a masterpiece of cooking</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-60">
+                    <img src="static/images/aesthetic-cakes.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Aesthetic cakes</h5>
+                        <p class="card-text">Please your loved ones with a masterpiece of cooking</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

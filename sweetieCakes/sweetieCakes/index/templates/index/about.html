@@ -1,0 +1,60 @@
+{% extends 'index/base.html'%}
+
+
+{% block title%}
+About Us
+{% endblock %}
+
+
+{% block menu%}
+    <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">HOME</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'about' %}">ABOUT US</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'catalog' %}">CATALOG</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'contacts' %}">CONTACT US</a>
+        </li>
+        <button type="button" class="btn btn-dark">SIGN IN</button>
+    </ul>
+{% endblock %}
+
+
+{% block content%}
+    <h3>
+      Our team
+      <small class="text-muted">our happy team</small>
+    </h3>
+    <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+              <h2 class="featurette-heading">{{ user.name.0 }}</h2>
+              <h3 class="text-muted">{{ position }}</h3>
+              <p class="lead">{{ age.age.0 }}</p>
+              <p>Location - {{ Location }}</p>
+              <p>He is a 3rd year student at the International University of Information Technology</p>
+              <p>loves outdoor activities, hiking, rock climbing, snowboarding, also loves extreme sports</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+              <img src="static/images/nurgissa.jpg" class="img-thumbnail" alt="nurgissa">
+          </div>
+    </div>
+    <hr class="featurette-divider">
+    <div class="row featurette">
+          <div class="col-md-7">
+              <h2 class="featurette-heading">{{ user.name.1 }}</h2>
+              <h3 class="text-muted">{{ position }}</h3>
+              <p class="lead">{{ age.age.1 }}</p>
+              <p>Location - {{ Location }}</p>
+              <p>She is a 3rd year student at the International University of Information Technology</p>
+              <p>a lover of books and films, a finalist of Miss Almaty 2019, prefers a cozy atmosphere</p>
+          </div>
+          <div class="col-md-5">
+              <img src="static/images/elina.jpg" class="img-thumbnail" alt="elina">
+          </div>
+    </div>
+{% endblock %}
