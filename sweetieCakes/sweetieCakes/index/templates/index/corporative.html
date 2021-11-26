@@ -1,0 +1,51 @@
+{% extends 'index/base.html'%}
+
+
+{% block title%}
+{{ title }}
+{% endblock %}
+
+
+{% block menu%}
+    <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">HOME</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">ABOUT US</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}#c1">CATALOG</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'contacts' %}">CONTACT US</a>
+        </li>
+        <button type="button" class="btn btn-dark">SIGN IN</button>
+    </ul>
+{% endblock %}
+
+
+{% block content%}
+    <div class="container-md">
+        <div class="container-text">
+            <h7 class="text-left"><a class="link-secondary" href="{% url 'index' %}">CATEGORY</a>> CORPORATIVE CAKES</h7>
+            <h5 class="text-left">CORPORATIVE CAKES</h5>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for corp in corp %}
+                <div class="col">
+                    <div class="card h-60">
+                        <img src="{{ corp.image }}" class="card-img-top" alt="face">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ corp.name }}</h5>
+                            <p class="card-text">{{ corp.price }} Tenge</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
