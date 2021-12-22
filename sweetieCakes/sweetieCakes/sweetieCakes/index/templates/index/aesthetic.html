@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+{% extends 'index/base.html'%}
+
+
+{% block title%}
+{{ title }}
+{% endblock %}
+
+
+{% block menu%}
+    <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">HOME</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">ABOUT US</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}#c1">CATALOG</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'contacts' %}">CONTACT US</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" style="font-size:20px"><i class="fa fa-shopping-basket">CART</i></a>
+        </li>
+        <form action="{% url 'registration' %}">
+            <button type="submit" class="btn btn-dark">SIGN IN</button>
+        </form>
+    </ul>
+{% endblock %}
+
+
+{% block content%}
+    <div class="container-md">
+    <div class="container-text">
+        <h7 class="text-left"><a class="link-secondary" href="{% url 'index' %}">CATEGORY</a>> AESTHETIC CAKES</h7>
+        <h5 class="text-left">AESTHETIC CAKES</h5>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for aesthetic in aesthetics %}
+            <div class="col">
+                <div class="card h-60">
+                    <a href="{% url 'productdetailbuy' aesthetic.id %}" class="text-decoration-none text-black">
+                    <img src="{{ aesthetic.image.url }}" class="card-img-top" alt="face">
+                    </a>
+                    <div class="card-body">
+                        <a href="{% url 'productdetailbuy' aesthetic.id %}" class="text-decoration-none text-black">
+                        <h5 class="card-title">{{ aesthetic.name }}</h5>
+                            </a>
+                        <p class="card-text">{{ aesthetic.price }} Tenge</p>
+                        <p class="card-text">A very delicious cake with vanilla impregnation and sponge dough. The basis of the dough is based on Italian flour. You can also add nuts if desired. </p>
+                    </div>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      Buy
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Notification</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <p>Are you sure you want to buy a cake?</p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Add to cart</button>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Buy now</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    </div>
+{% endblock %}

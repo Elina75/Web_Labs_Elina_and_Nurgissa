@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="static/css/create.css">
+
+
+{% extends 'index/base.html' %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Create Product {% endblock %} - SweetieCakes</title>
+</head>
+<body>
+    {% block content %}
+
+            <div class="row">
+                <div class="container text-center"><h1>Create a new product</h1></div>
+            </div>
+            <div class="row">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.media }}
+                    {{ form.as_p }}
+                    <div class="bts align-center">
+                     <button class="btn btn-primary btn-lg center-block btn_animated" type="submit">
+                     <span class="circle">
+                         <span class="ink animate"></span>Create Product
+                      </span>
+                     </button>
+                    </div>
+                    <script>/* Button hover effect */
+	$('.btn_animated').on('mouseenter', '.circle', function(e){
+		if ($(this).find(".ink").length === 0) {
+			$(this).prepend("<span class='ink'></span>");
+		}
+		var ink = $(this).find(".ink");
+		ink.removeClass("animate");
+		if (!ink.height() && !ink.width()) {
+			var d = Math.max($(this).outerWidth(), $(this).outerHeight());
+			ink.css({
+				height: d,
+				width: d
+			});
+		}
+		var x = e.pageX - $(this).offset().left - ink.width() / 2;
+		var y = e.pageY - $(this).offset().top - ink.height() / 2;
+		ink.css({
+			top: y + 'px',
+			left: x + 'px'
+		}).addClass("animate");
+	});</script>
+                </form>
+            </div>
+
+    {% endblock %}
+</body>
+</html>

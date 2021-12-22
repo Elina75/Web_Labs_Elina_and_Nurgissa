@@ -1,0 +1,79 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+{% extends 'index/base.html'%}
+
+
+{% block title%}
+Contacts
+{% endblock %}
+
+
+{% block menu%}
+    <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">HOME</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">ABOUT US</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}#c1">CATALOG</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'contacts' %}">CONTACT US</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" style="font-size:20px"><i class="fa fa-shopping-basket">CART</i></a>
+        </li>
+        <form action="{% url 'registration' %}">
+            <button type="submit" class="btn btn-dark">SIGN IN</button>
+        </form>
+    </ul>
+{% endblock %}
+
+
+{% block content%}
+    <h2 class="text-center">Our Team Contacts</h2>
+    <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-primary">Project leader</strong>
+              <h3 class="mb-0">
+                <h5 class="card-title">{{ user.name.0}}</h5>
+              </h3>
+              <div class="mb-1 text-muted">{{position}}</div>
+              <p class="card-text">Phone number: {{phone.phone.0}}</p>
+              <p class="card-text">Email: {{email.email.0}}</p>
+              <p class="card-text">Office hours: {{hours}}</p>
+            </div>
+           <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" style="width: 200px; height: 250px;" src="static/images/nurgissa.jpg" data-holder-rendered="true">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-success">Project leader</strong>
+              <h3 class="mb-0">
+                <h5 class="card-title">{{ user.name.1}}</h5>
+              </h3>
+                <div class="mb-1 text-muted">{{position}}</div>
+                <p class="card-text">Phone number: {{phone.phone.0}}</p>
+                <p class="card-text">Email: {{email.email.0}}</p>
+                <p class="card-text">Office hours: {{hours}}</p>
+            </div>
+            <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" style="width: 38%; height: 245px;" src="static/images/elina.jpg" data-holder-rendered="true">
+          </div>
+        </div>
+    </div>
+    <h2 class="text-center">Our address on Google map</h2>
+    <div class="display-6 row">
+        <div class="col-lg-8">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2725.838422747978!2d76.91109632337538!3d43.23411982417107!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3883692f027581ad%3A0x2426740f56437e63!2z0JzQtdC20LTRg9C90LDRgNC-0LTQvdGL0Lkg0YPQvdC40LLQtdGA0YHQuNGC0LXRgiDQuNC90YTQvtGA0LzQsNGG0LjQvtC90L3Ri9GFINGC0LXRhdC90L7Qu9C-0LPQuNC5!5e0!3m2!1sru!2skz!4v1639480906810!5m2!1sru!2skz" width="100%" height="400" style="border:3px;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="col-lg-4">
+            <p class="card-text"> Almaty city</p>
+            <p class="card-text"> IITU University</p>
+            <p class="card-text"> Manasa 34/A</p>
+        </div>
+    </div>
+{% endblock %}

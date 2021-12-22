@@ -1,0 +1,122 @@
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+
+{% extends 'index/base.html'%}
+
+
+{% block title%}
+{{ title }}
+{% endblock %}
+
+
+{% block menu%}
+    <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">HOME</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">ABOUT US</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}#c1">CATALOG</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'contacts' %}">CONTACT US</a>
+        </li>
+        <form action="{% url 'registration' %}">
+            <button type="submit" class="btn btn-dark">SIGN IN</button>
+        </form>
+    </ul>
+{% endblock %}
+
+
+{% block content%}
+    <br/><br/>
+    <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+        <div class="row one-goods" itemscope="" itemtype="http://schema.org/Product">
+            <div class="row">
+                <div class="col-md-8 col-sm-8 images-block">
+                    <div class="col-md-10 col-sm-10 row">
+                        <img src="{{ product.image.url }}" class="goods-image"  itemprop="image">
+                    </div>
+                </div>
+                <meta itemprop="name" content="{{ product.image.url }}">
+                <div class="col-md-4 col-sm-4 information-block" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                    <h1>{{ product.name }}</h1>
+
+                    <div class="price" itemprop="price" content="{{ product.price }}">
+                        <span>{{ product.price }}</span>
+                    </div>
+                    <meta itemprop="priceCurrency" content="TNG">
+                    <div class="size">
+                        <div class="title">
+                            Сколько кг желаете заказать?
+                            <div class="counter">
+                                <span class="text">Выбрано</span>
+                                <span class="value">
+                                    3
+                                </span>
+                                <span class="type">кг</span>
+                                <span class="iterators" data-min="3">
+                                    <a href="#" class="iterator hide" data-type="decrement">-</a>
+                                    <a href="#" class="iterator" data-type="increment">+</a>
+                                </span>
+                                <input type="hidden" class="item-id" value="1353">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt10px">
+                        <button class="btn btn-gray w178px basket-add basket-goods-btn" onclick="yaCounter48313040.reachGoal('v_korziny');gtag('event', 'add_bascket', {'event_category': 'button'}); return true;" data-id="1353" data-url="/basket/add/" data-add-text="Добавить в корзину" data-added-text="Товар уже в корзине">
+                            Добавить в корзину
+                        </button>
+                    </div>
+                    <div class="mt10px">
+                        <ul class="parameters">
+                            <li>
+                                Высокое качество продуктов
+                            </li>
+                            <li>
+                                Без сухих смесей
+                            </li>
+                            <li>
+                                Без консервантов
+                            </li>
+                            <li>
+                                Ручная работа
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="phones">
+                        <div class="phone">+7 777 777 77 77</div>
+                    </div>
+                    <div class="address">
+                        <div>
+                            Almaty, manasa 34A
+                        </div>
+                    </div>
+                    <div class="worktime">
+                        <div>
+                            Ежедневно с 10.00 до 20.00
+                        </div>
+                    </div>
+                    <div class="whatsappContact">
+                        <div>
+                            Если у вас остались вопросы,<br>
+                            напишите нам в
+                            <a href="whatsapp://send?phone=+7 (777) 777-77-77">
+                                WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Add to cart</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Buy now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

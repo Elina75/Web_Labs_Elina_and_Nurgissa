@@ -1,0 +1,46 @@
+{% extends 'index/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} All products {% endblock %} - SweetieCakes</title>
+</head>
+<body>
+    {% block content %}
+            <div class="row">
+                <div class="container text-center"><h2>Product Information</h2></div>
+                <div class="col-sm-6">
+                    <a class="btn btn-primary" href="{% url 'createproduct' %}" role="button">Create a new product</a><br/><br/><br/>
+                </div>
+                <table class="table">
+                    <thead class="thead-light">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Price, tg</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for product in products %}
+                            <tr>
+                                <th>{{ product.id }}</th>
+                                <th><a href="{% url 'productdetails' product.id %}">{{ product.name }}</a></th>
+                                <th>{{ product.price }}</th>
+                                <th>{{ product.category }}</th>
+                                <th>
+                                    <a class="btn btn-warning" href="{% url 'updateproduct' product.id %}" role="button">Update</a>
+                                    <a class="btn btn-danger" href="{% url 'deleteproduct' product.id %}" role="button">Delete</a>
+                                </th>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <div class="container text-center sign"><h1></h1></div>
+            </div>
+    {% endblock %}
+</body>
+</html>
+
